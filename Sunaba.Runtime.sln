@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolt.Runtime", "Bolt.Runtime.csproj", "{A5EE0B8B-9BC0-40B9-A1CD-C7DECF219CCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunaba.Runtime", "Sunaba.Runtime.csproj", "{A5EE0B8B-9BC0-40B9-A1CD-C7DECF219CCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
