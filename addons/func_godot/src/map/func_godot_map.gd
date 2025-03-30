@@ -63,6 +63,19 @@ func set_texture_loader(tl : TextureLoader) -> void :
 	if (texture_loader is FuncGodotTextureLoader):
 		texture_loader.ioTextureLoader = tl
 
+func loadFromString(contents : String):
+	var rng = RandomNumberGenerator.new()
+	var mapId = rng.randi()
+	var userTempPath = "user://temp/"
+	if not DirAccess.dir_exists_absolute(userTempPath):
+		DirAccess.make_dir_absolute(userTempPath)
+	var userMapPath = userTempPath + str(mapId) + ".map"
+	var file = FileAccess.open(userMapPath, FileAccess.WRITE)
+	file.store_string(contents)
+	file.close()
+	local_map_file = userMapPath
+	verify_and_build()
+
 # Utility
 ## Verify that FuncGodot is functioning and that [member map_file] exists. If so, build the map. If not, signal [signal build_failed]
 func verify_and_build() -> void:
