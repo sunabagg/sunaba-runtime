@@ -11,19 +11,18 @@ class Main extends sunaba.App {
         var freeLookCamera = new FreeLookCamera3D();
         rootNode.addChild(freeLookCamera);
         freeLookCamera.globalPosition = new Vector3(0, 0, -5);
-        var funcGodotMap : Node = MapLoader.createMapNode();
+        var funcGodotMap = MapLoader.createMapNode();
         if (funcGodotMap == null) {
             trace("Failed to load map");
         } else {
             rootNode.addChild(funcGodotMap);
             MapLoader.setTexturePath("app://assets/textures/", funcGodotMap, ioInterface); // Set the path to your texture directory
             // Optionally, you can set the position or any other properties of the map node
-            MapLoader.addPostLoadCallback(funcGodotMap, function() {
+            MapLoader.addPostLoadCallback(() ->{
                 // This callback will be called after the map is loaded
                 trace("Map loaded successfully");
-                // You can perform additional setup or modifications here
-            });
-            MapLoader.loadMap("app://assets/test1.map", funcGodotMap, ioInterface)
+            }, funcGodotMap);
+            MapLoader.loadMap("app://assets/test1.map", funcGodotMap, ioInterface);
         }
     }
 }
