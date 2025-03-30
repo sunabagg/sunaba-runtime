@@ -63,7 +63,7 @@ func set_texture_loader(tl : TextureLoader) -> void :
 	if (texture_loader is FuncGodotTextureLoader):
 		texture_loader.ioTextureLoader = tl
 
-func loadFromString(contents : String):
+func load_from_string(contents : String):
 	var rng = RandomNumberGenerator.new()
 	var mapId = rng.randi()
 	var userTempPath = "user://temp/"
