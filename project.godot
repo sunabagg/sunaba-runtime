@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Sunaba.Runtime"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+boot_splash/fullsize=false
+boot_splash/image="res://splashscreen.png"
+config/icon="uid://bqbwgf0iky7u6"
+config/windows_native_icon="res://icon.ico"
+
+[display]
+
+window/size/viewport_width=491
+window/size/viewport_height=360
+window/size/resizable=false
+window/size/borderless=true
+window/subwindows/embed_subwindows=false
+
+[dotnet]
+
+project/assembly_name="Sunaba.Runtime"
+
+[editor]
+
+run/main_run_args="--dirpath=C:/Users/lucas/sunaba-bolt/Tests/maptest/"
+
+[gui]
+
+theme/custom="res://addons/lite/light.tres"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+environment/defaults/default_environment="uid://dx2o1w4ixn5re"
