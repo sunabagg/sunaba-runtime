@@ -79,8 +79,12 @@ func load_texture(texture_name: String) -> Texture2D:
 	# Load albedo texture if it exists
 	for texture_extension in map_settings.texture_file_extensions:
 		var texture_path: String = "%s/%s.%s" % [map_settings.base_texture_dir, texture_name, texture_extension]
+		print(texture_path)
 		if ResourceLoader.exists(texture_path, "Texture2D") or ResourceLoader.exists(texture_path + ".import", "Texture2D"):
 			return load(texture_path) as Texture2D
+		elif FileAccess.file_exists(texture_path):
+			var image = Image.load_from_file(texture_path)
+			return ImageTexture.create_from_image(image)
 	
 	var texture_name_lower: String = texture_name.to_lower()
 	for texture_wad in texture_wad_resources:
