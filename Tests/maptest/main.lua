@@ -670,7 +670,7 @@ Main.prototype.init = function(self)
     __haxe_Log.trace("Failed to load map", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=16,className="Main",methodName="init"}));
   else
     self:get_rootNode():addChild(funcGodotMap);
-    gdx.MapLoader.setTexturePath("app://assets/textures/", funcGodotMap, self:get_ioInterface());
+    gdx.MapLoader.loadTextures("app://assets/textures/", self:get_ioInterface(), funcGodotMap);
     gdx.MapLoader.addPostLoadCallback(function() 
       __haxe_Log.trace("Map loaded successfully", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=23,className="Main",methodName="init"}));
     end, funcGodotMap);

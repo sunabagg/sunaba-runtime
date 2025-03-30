@@ -16,7 +16,7 @@ class Main extends sunaba.App {
             trace("Failed to load map");
         } else {
             rootNode.addChild(funcGodotMap);
-            MapLoader.setTexturePath("app://assets/textures/", funcGodotMap, ioInterface); // Set the path to your texture directory
+            MapLoader.loadTextures("app://assets/textures/", ioInterface, funcGodotMap); // Loads textures from the specified directory
             // Optionally, you can set the position or any other properties of the map node
             MapLoader.addPostLoadCallback(() ->{
                 // This callback will be called after the map is loaded
