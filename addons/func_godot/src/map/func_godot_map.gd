@@ -76,6 +76,9 @@ func load_from_string(contents : String):
 	local_map_file = userMapPath
 	verify_and_build()
 
+func set_base_texture_dir(path : String):
+	map_settings.base_texture_dir = path
+
 # Utility
 ## Verify that FuncGodot is functioning and that [member map_file] exists. If so, build the map. If not, signal [signal build_failed]
 func verify_and_build() -> void:
