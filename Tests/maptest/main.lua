@@ -665,16 +665,16 @@ Main.prototype.init = function(self)
   local freeLookCamera = gdx.FreeLookCamera3D.__new();
   self:get_rootNode():addChild(freeLookCamera);
   freeLookCamera.globalPosition = __sunaba_godot__Vector3_Vector3_Impl_._new(0, 0, -5);
-  local funcGodotMap = sunaba.MapLoader.createMapNode();
+  local funcGodotMap = gdx.MapLoader.createMapNode();
   if (funcGodotMap == nil) then 
     __haxe_Log.trace("Failed to load map", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=16,className="Main",methodName="init"}));
   else
     self:get_rootNode():addChild(funcGodotMap);
-    sunaba.MapLoader.setTexturePath("app://assets/textures/", funcGodotMap, self:get_ioInterface());
-    sunaba.MapLoader.addPostLoadCallback(function() 
+    gdx.MapLoader.setTexturePath("app://assets/textures/", funcGodotMap, self:get_ioInterface());
+    gdx.MapLoader.addPostLoadCallback(function() 
       __haxe_Log.trace("Map loaded successfully", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="src/Main.hx",lineNumber=23,className="Main",methodName="init"}));
     end, funcGodotMap);
-    sunaba.MapLoader.loadMap("app://assets/test1.map", funcGodotMap, self:get_ioInterface());
+    gdx.MapLoader.loadMap("app://assets/test1.map", funcGodotMap, self:get_ioInterface());
   end;
 end
 
