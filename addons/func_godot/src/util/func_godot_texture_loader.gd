@@ -55,6 +55,8 @@ const PBR_SUFFIX_PROPERTIES: Dictionary = {
 var map_settings: FuncGodotMapSettings = FuncGodotMapSettings.new()
 var texture_wad_resources: Array = []
 
+var ioTextureLoader : TextureLoader = null
+
 # Overrides
 func _init(new_map_settings: FuncGodotMapSettings) -> void:
 	map_settings = new_map_settings
@@ -77,8 +79,8 @@ func load_texture(texture_name: String) -> Texture2D:
 	# Load albedo texture if it exists
 	for texture_extension in map_settings.texture_file_extensions:
 		var texture_path: String = "%s/%s.%s" % [map_settings.base_texture_dir, texture_name, texture_extension]
-		if ResourceLoader.exists(texture_path, "Texture2D") or ResourceLoader.exists(texture_path + ".import", "Texture2D"):
-			return load(texture_path) as Texture2D
+		if ioTextureLoader.TextureExists(texture_path):
+			return ioTextureLoader.LoadTexture(texture_path)
 	
 	var texture_name_lower: String = texture_name.to_lower()
 	for texture_wad in texture_wad_resources:

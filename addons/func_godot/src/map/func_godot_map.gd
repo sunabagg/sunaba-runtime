@@ -59,6 +59,10 @@ var entity_mesh_instances: Dictionary = {}
 var entity_occluder_instances: Dictionary = {}
 var entity_collision_shapes: Array = []
 
+func set_texture_loader(tl : TextureLoader) -> void :
+	if (texture_loader is FuncGodotTextureLoader):
+		texture_loader.ioTextureLoader = tl
+
 # Utility
 ## Verify that FuncGodot is functioning and that [member map_file] exists. If so, build the map. If not, signal [signal build_failed]
 func verify_and_build() -> void:
