@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkuql1b5jpof2"]
+
+[ext_resource type="Script" uid="uid://ocjew421glro" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_ii6pw"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_566yf"]
+
+[node name="Map" type="Node3D"]
+script = ExtResource("1_ii6pw")
+map_settings = ExtResource("2_566yf")
+metadata/_custom_type_script = "uid://ocjew421glro"
