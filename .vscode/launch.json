@@ -33,6 +33,21 @@
       "stopAtEntry": false
     },
     {
+      "name": "Launch Runtime (MapTest sbx)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${config:godot-dotnet-tools.executablePath}",
+      "preLaunchTask": "build",
+      "args": [
+        "--path",
+        "${workspaceRoot}/",
+        "${workspaceRoot}/maptest.sbx"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopAtEntry": false
+    },
+    {
       "name": "Launch Runtime (UiTest)",
       "type": "coreclr",
       "request": "launch",
