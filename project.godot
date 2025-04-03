@@ -33,7 +33,7 @@ project/assembly_name="Sunaba.Runtime"
 
 [editor]
 
-run/main_run_args="--dirpath=C:/Users/lucas/sunaba-bolt/Tests/maptest/"
+run/main_run_args="--dirpath=res://Tests/maptest/"
 
 [editor_plugins]
 
